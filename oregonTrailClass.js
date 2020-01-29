@@ -37,7 +37,7 @@ class Hunter extends Traveler {
         } else if (this.food < 2) {
             this.isHealthy = false
         }
-        return this
+        return this.food
     }
     giveFood (traveler, numOfFoodUnits) {
         if (this.food >= numOfFoodUnits) {
@@ -67,7 +67,7 @@ class Wagon {
     shouldQuarantine () {
         for (let i=0; i<this.passengers.length; i++) {
             if (this.passengers[i].isHealthy == false) {
-                return false
+                return true
             }
         }
         return false
